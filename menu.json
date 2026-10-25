@@ -1,0 +1,425 @@
+{
+  "brand": {
+    "name": "Küncü Mix",
+    "fullName": "Küncü Mix Gece Dönercisi",
+    "tagline": "Gece Dönercisi",
+    "subtitle": "Elazığ · Hatay usulü tavuk döner & dürüm",
+    "area": "Elazığ",
+    "logo": "assets/logo.svg",
+    "phone": "0506 578 31 31",
+    "whatsapp": "905065783131",
+    "address": "Ataşehir, Ergenekon Sk. 2071 6/A, 23000 Elazığ Merkez/Elazığ",
+    "mapsUrl": "",
+    "instagram": "https://www.instagram.com/kuncu_mix23",
+    "googleMapsUrl": "https://share.google/DRl6vRD4grDqNoUqZ",
+    "rating": {
+      "value": 5,
+      "count": "12"
+    },
+    "delivery": "Elazığ içi teslimat",
+    "googleReviewUrl": "https://search.google.com/local/writereview?placeid=PLACE_ID_BURAYA",
+    "currency": "₺",
+    "hours": {
+      "open": "17:00",
+      "close": "03:00",
+      "note": "Her gün 17:00 - 03:00 (gece 03:00'e kadar açık)"
+    },
+    "notice": "Fiyatlar KDV dahildir. Afiyet olsun!"
+  },
+  "categories": [
+    {
+      "id": "donerler",
+      "name": "Dönerler",
+      "icon": "🌯",
+      "items": [
+        {
+          "id": "hatay",
+          "name": "Hatay",
+          "desc": "90 gram · Patates, tavuk döner, kornişon turşu, özel domates sosu, sarımsaklı mayonez",
+          "price": 160,
+          "image": "assets/products/hatay-91a6294dd6.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "hatay-zurna",
+          "name": "Hatay Zurna",
+          "desc": "120 gram · Patates, tavuk döner, kornişon turşu, özel domates sosu, sarımsaklı mayonez",
+          "price": 190,
+          "image": "assets/products/hatay-zurna-2d9fff5d60.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "antakya-durum",
+          "name": "Antakya Dürüm",
+          "desc": "90 gram · Patates, tavuk döner, kornişon turşu, köz biber, köz patlıcan, özel domates sosu, sarımsaklı mayonez",
+          "price": 170,
+          "image": "assets/products/antakya-durum-1b6b4cf48f.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "antakya-zurna-durum",
+          "name": "Antakya Zurna Dürüm",
+          "desc": "120 gram · Patates, tavuk döner, kornişon turşu, köz biber, köz patlıcan, özel domates sosu, sarımsaklı mayonez",
+          "price": 200,
+          "image": "assets/products/antakya-zurna-durum-1f6f66ef68.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "kuncu-kasar",
+          "name": "Küncü Kaşar",
+          "desc": "90 gram · Patates, tavuk döner, kornişon turşu, kaşar peyniri, özel domates sosu, sarımsaklı mayonez, çifte kavrulmuş küncü",
+          "price": 200,
+          "badge": "Popüler",
+          "image": "assets/products/kuncu-kasar-00abe11c4c.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "kuncu-kasar-zurna",
+          "name": "Küncü Kaşar Zurna",
+          "desc": "120 gram · Patates, tavuk döner, kornişon turşu, kaşar peyniri, özel domates sosu, sarımsaklı mayonez, çifte kavrulmuş küncü",
+          "price": 240,
+          "image": "assets/products/kuncu-kasar-zurna-4e267eb970.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "special",
+          "name": "Special",
+          "desc": "90 gram · Patates, tavuk döner, kornişon turşu, kaşar peyniri, köz biber, köz patlıcan, özel domates sosu, sarımsaklı mayonez, çifte kavrulmuş küncü",
+          "price": 220,
+          "image": "assets/products/special-a13397db5d.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "special-zurna",
+          "name": "Special Zurna",
+          "desc": "120 gram · Patates, tavuk döner, kornişon turşu, kaşar peyniri, köz biber, köz patlıcan, özel domates sosu, sarımsaklı mayonez, çifte kavrulmuş küncü",
+          "price": 250,
+          "image": "assets/products/special-zurna-abea838642.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "kumru-durum",
+          "name": "Kumru Dürüm",
+          "desc": "10 parça sosis · Patates, sosis, kaşar peyniri, özel domates sosu, sarımsaklı mayonez",
+          "price": 180,
+          "image": "assets/products/kumru-durum-e1e2a28093.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "bazuka-durum",
+          "name": "Bazuka Dürüm",
+          "desc": "160 gram · Patates, tavuk döner, kornişon turşu, özel domates sosu, sarımsaklı mayonez, çift lavaş",
+          "price": 250,
+          "image": "assets/products/bazuka-durum-dc7c4c6aa3.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "ekstra-lavas",
+          "name": "Ekstra Lavaş",
+          "desc": "1 adet ekstra lavaş",
+          "price": 20,
+          "image": "assets/products/ekstra-lavas.jpg"
+        }
+      ]
+    },
+    {
+      "id": "menuler",
+      "name": "Menüler",
+      "icon": "🍽️",
+      "items": [
+        {
+          "id": "zurna-kombo-ayran",
+          "name": "Zurna Kombo Menü (Ayran)",
+          "desc": "120 gram · Hatay usulü zurna dürüm, ayran, porsiyon patates kızartması",
+          "price": 250,
+          "badge": "Popüler",
+          "image": "assets/products/hatay-zurna-2d9fff5d60.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "zurna-kombo-kola",
+          "name": "Zurna Kombo Menü (Kola)",
+          "desc": "120 gram · Hatay usulü zurna dürüm, kola, porsiyon patates kızartması",
+          "price": 270,
+          "image": "assets/products/hatay-zurna-2d9fff5d60.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "standart-kombo-ayran",
+          "name": "Standart Kombo Menü (Ayran)",
+          "desc": "90 gram · Hatay usulü dürüm, ayran, porsiyon patates kızartması",
+          "price": 230,
+          "image": "assets/products/hatay-91a6294dd6.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "standart-kombo-kola",
+          "name": "Standart Kombo Menü (Kola)",
+          "desc": "90 gram · Hatay usulü dürüm, kola, porsiyon patates kızartması",
+          "price": 250,
+          "image": "assets/products/hatay-91a6294dd6.jpg",
+          "options": [
+            {
+              "id": "extra45",
+              "name": "+45 gram",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "id": "ekstra-lavas",
+          "name": "Ekstra Lavaş",
+          "desc": "1 adet ekstra lavaş",
+          "price": 20,
+          "image": "assets/products/ekstra-lavas.jpg"
+        }
+      ]
+    },
+    {
+      "id": "patates",
+      "name": "Patates Kızartması",
+      "icon": "🍟",
+      "items": [
+        {
+          "id": "patates-buyuk",
+          "name": "Patates Kızartması (Büyük)",
+          "desc": "Büyük boy porsiyon",
+          "price": 120,
+          "image": "assets/patates.jpg"
+        },
+        {
+          "id": "patates-kucuk",
+          "name": "Patates Kızartması (Küçük)",
+          "desc": "Küçük boy porsiyon",
+          "price": 70,
+          "image": "assets/patates.jpg"
+        }
+      ]
+    },
+    {
+      "id": "icecekler",
+      "name": "İçecekler",
+      "icon": "🥤",
+      "items": [
+        {
+          "id": "su",
+          "name": "Su",
+          "desc": "Pet şişe",
+          "price": 20,
+          "image": "assets/products/su-76b6799e76.jpg"
+        },
+        {
+          "id": "ayran-170",
+          "name": "Ayran (17 cl)",
+          "desc": "Küçük boy ayran",
+          "price": 25,
+          "image": "assets/products/ayran-17cl.jpg"
+        },
+        {
+          "id": "ayran-30",
+          "name": "Ayran (30 cl.)",
+          "desc": "Büyük boy ayran",
+          "price": 35,
+          "image": "assets/products/ayran-30-ba5ca72737.jpg"
+        },
+        {
+          "id": "salgam",
+          "name": "Şalgam",
+          "desc": "Acılı veya acısız",
+          "price": 50,
+          "image": "assets/products/salgam-157d47f89a.jpg"
+        },
+        {
+          "id": "cola-330",
+          "name": "Cola 330 ml",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/cola-330-642cf585ec.jpg"
+        },
+        {
+          "id": "fanta-330",
+          "name": "Fanta 330 ml",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/fanta-330-5dbf5b8a85.jpg"
+        },
+        {
+          "id": "sprite-330",
+          "name": "Sprite 330 ml",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/sprite-330-0fd3ac87ba.jpg"
+        },
+        {
+          "id": "cola-1lt",
+          "name": "Cola 1 lt",
+          "desc": "Pet şişe",
+          "price": 80,
+          "image": "assets/products/cola-1lt-7b8dad43e1.jpg"
+        },
+        {
+          "id": "cola-25",
+          "name": "Cola 2,5 lt",
+          "desc": "Pet şişe",
+          "price": 110,
+          "image": "assets/products/cola-25-4026353f4b.jpg"
+        },
+        {
+          "id": "fusetea-seftali",
+          "name": "Fuse Tea Şeftali (33 cl.)",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/fusetea-seftali-ad728f38b9.jpg"
+        },
+        {
+          "id": "fusetea-limon",
+          "name": "Fuse Tea Limon (33 cl.)",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/fusetea-limon-a49781a1f8.jpg"
+        },
+        {
+          "id": "fusetea-mango",
+          "name": "Fuse Tea Mango & Ananas (33 cl.)",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/fusetea-mango-78684d904e.jpg"
+        },
+        {
+          "id": "soda-mango-ananas",
+          "name": "Mangolu & Ananaslı Soda (20 cl.)",
+          "desc": "Cam şişe",
+          "price": 40,
+          "image": "assets/products/soda-mango-ananas-new.jpg"
+        },
+        {
+          "id": "soda-limon",
+          "name": "Limonlu Soda (20 cl.)",
+          "desc": "Cam şişe",
+          "price": 40,
+          "image": "assets/products/soda-limon-87f8eb1c80.jpg"
+        },
+        {
+          "id": "soda-sade",
+          "name": "Sade Soda (20 cl.)",
+          "desc": "Cam şişe",
+          "price": 40,
+          "image": "assets/products/soda-sade-958408103c.jpg"
+        },
+        {
+          "id": "soda-karpuz",
+          "name": "Karpuzlu Soda (20 cl.)",
+          "desc": "Cam şişe",
+          "price": 40,
+          "image": "assets/products/soda-karpuz-d9fc4f2707.jpg"
+        },
+        {
+          "id": "cola-turka-1l",
+          "name": "Cola Turka (1 L.)",
+          "desc": "Pet şişe",
+          "price": 80,
+          "image": "assets/products/cola-turka-1l-8d6dd3964d.jpg"
+        },
+        {
+          "id": "cola-turka-33",
+          "name": "Cola Turka (33 cl.)",
+          "desc": "Kutu içecek",
+          "price": 60,
+          "image": "assets/products/cola-turka-33-f7317b693d.jpg"
+        }
+      ]
+    },
+    {
+      "id": "diger",
+      "name": "Diğer",
+      "icon": "🛍️",
+      "items": [
+        {
+          "id": "poset",
+          "name": "Plastik Poşet",
+          "desc": "Çevre Kanunu gereği her poşet 1 TL.",
+          "price": 1,
+          "image": "assets/products/poset-8060513664.jpg"
+        }
+      ]
+    }
+  ]
+}
