@@ -20,9 +20,9 @@
     "googleReviewUrl": "https://search.google.com/local/writereview?placeid=PLACE_ID_BURAYA",
     "currency": "₺",
     "hours": {
-      "open": "17:00",
+      "open": "11:00",
       "close": "03:00",
-      "note": "Her gün 17:00 - 03:00 (gece 03:00'e kadar açık)"
+      "note": "Her gün 11:00 - 03:00 (gece 03:00'e kadar açık)"
     },
     "notice": "Fiyatlar KDV dahildir. Afiyet olsun!"
   },
