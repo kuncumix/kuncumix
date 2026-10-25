@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f0d12" />
+  <meta name="description" content="Küncü Mix Gece Dönercisi Elazığ - Güncel menü, indirimli fiyatlar ve WhatsApp ile sipariş." />
+  <meta property="og:title" content="Küncü Mix Gece Dönercisi" />
+  <meta property="og:description" content="Elazığ · Hatay usulü tavuk döner & dürüm. Menü için QR'ı okutun." />
+  <meta property="og:type" content="restaurant" />
+  <title>Küncü Mix Gece Dönercisi · Menü</title>
+
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/logo.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ONLINE SİPARİŞ HATTI -->
+  <div class="orderline" id="orderLine">
+    <a class="orderline__call" id="orderLineCall" href="#" aria-label="Sipariş hattını ara">
+      <span class="orderline__pulse" aria-hidden="true"></span>
+      <span class="orderline__text">
+        <span class="orderline__label">Online Sipariş Hattı</span>
+        <span class="orderline__num" id="orderLineNum">—</span>
+      </span>
+    </a>
+    <a class="orderline__wa" id="orderLineWa" href="#" aria-label="WhatsApp ile sipariş ver">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.9.53 3.68 1.45 5.2L2 22l5.1-1.6a9.9 9.9 0 0 0 4.94 1.3h.01c5.43 0 9.84-4.4 9.84-9.84 0-2.63-1.02-5.1-2.88-6.96A9.77 9.77 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.3-1.96 1.35-.5.05-.96.24-3.25-.68-2.77-1.1-4.5-3.94-4.64-4.13-.14-.2-1.1-1.47-1.1-2.8s.7-1.98.94-2.25c.24-.27.53-.34.7-.34l.5.01c.16 0 .38-.06.6.46.24.55.8 1.94.86 2.08.07.14.11.3.02.49-.1.2-.15.32-.29.49-.14.17-.3.38-.42.5-.14.15-.29.3-.13.6.17.28.74 1.22 1.6 1.98 1.1.98 2.02 1.28 2.3 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.28.38-.23.64-.14.27.1 1.68.79 1.97.94.28.14.47.2.54.32.07.12.07.7-.17 1.38Z"/></svg>
+      <span>Sipariş</span>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="logo-badge">🌯</div>
+    <h1 id="brandName">Küncü Mix</h1>
+    <p class="tagline" id="brandSubtitle">Elazığ · Hatay usulü tavuk döner &amp; dürüm</p>
+
+    <div class="badges">
+      <span class="badge open" id="badgeStatus">🟢 <b>Açık</b> · <span id="badgeHours">17:00 – 03:00</span></span>
+      <a class="badge" id="badgeRating" href="#" target="_blank" rel="noopener" hidden title="Google yorumlarını gör"><span class="star">★</span> <b id="ratingVal">5.0</b> · <span id="ratingCount">12</span> değerlendirme <span class="badge__go">›</span></a>
+      <span class="badge" id="badgeDelivery" hidden>🛵 <span id="deliveryText"></span></span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn primary" id="heroCall" href="#"><span>📞</span> <span id="heroCallNum">Hemen Ara</span></a>
+      <a class="btn" id="heroWa" href="#">💬 WhatsApp</a>
+      <a class="btn" id="heroInstagram" href="#" target="_blank" rel="noopener" hidden>📸 Instagram</a>
+    </div>
+  </header>
+
+  <!-- KAYMALI KATEGORİLER (ortada) -->
+  <nav class="catnav" aria-label="Menü kategorileri">
+    <div class="catnav__inner" id="catNav"></div>
+  </nav>
+
+  <!-- MENÜ -->
+  <main class="menu" id="menuRoot">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Menü yükleniyor…</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="shop-logo" id="footerBrand">Küncü Mix Gece Dönercisi</div>
+    <div class="fline" id="footerHours">🕐 <span id="footerHoursText">—</span></div>
+    <div class="fline" id="footerAddress">📍 <span id="footerAddressText">—</span></div>
+    <div class="fline" id="footerPhone">📞 <a id="footerPhoneLink" href="#">—</a></div>
+    <div class="fline" id="footerInstagram" hidden>📸 <a id="footerInstagramLink" href="#" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="fline" id="footerReview" hidden><a class="btn" id="googleReviewBtn" href="#" target="_blank" rel="noopener"><span class="star">★</span> Bizi Google'da puanlayın</a></div>
+    <div class="note" id="footerNotice"></div>
+  </footer>
+
+  <!-- ÜRÜN DETAYI -->
+  <div class="sheet" id="detailSheet" hidden>
+    <div class="sheet__backdrop" data-close-detail></div>
+    <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <div class="sheet__head">
+        <h2 id="detailTitle">Ürün</h2>
+        <button class="sheet__close" data-close-detail aria-label="Kapat">✕</button>
+      </div>
+      <div class="detail__img" id="detailImgWrap">🍽️</div>
+      <p class="detail__desc" id="detailDesc"></p>
+      <div class="detail__options" id="detailOptions" hidden></div>
+      <div class="detail__price">
+        <span class="price" id="detailPrice"></span>
+        <span class="old" id="detailOld" hidden></span>
+        <span class="disc" id="detailDisc" hidden>İNDİRİM</span>
+      </div>
+      <div class="detail__act" id="detailAct"></div>
+    </div>
+  </div>
+
+  <!-- SEPET ÇUBUĞU -->
+  <button class="cartbar" id="cartBar" hidden>
+    <span class="cartbar__left">
+      <span class="cartbar__count" id="cartCount">0</span>
+      <span class="cartbar__label">ürün</span>
+    </span>
+    <span class="cartbar__total" id="cartTotal">0 TL</span>
+    <span class="cartbar__cta">Sepeti Gör</span>
+  </button>
+
+  <!-- SEPET PANELİ -->
+  <div class="sheet" id="cartSheet" hidden>
+    <div class="sheet__backdrop" data-close-cart></div>
+    <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="sheet__head">
+        <h2 id="cartTitle">Sepetiniz</h2>
+        <button class="sheet__close" data-close-cart aria-label="Kapat">✕</button>
+      </div>
+
+      <ul class="cart-list" id="cartList"></ul>
+
+      <div class="sheet__foot">
+        <div class="order-info">
+          <p class="order-info__title">🛵 Teslimat Bilgileri</p>
+          <label class="oi-label" for="custName">Ad Soyad <span class="oi-opt">(opsiyonel)</span></label>
+          <input id="custName" class="oi-input" type="text" inputmode="text" autocomplete="name" placeholder="Adınız Soyadınız" />
+          <label class="oi-label" for="custAddress">Teslimat Adresi</label>
+          <textarea id="custAddress" class="oi-input" rows="2" autocomplete="street-address"
+            placeholder="Mahalle, sokak, bina no, daire, kat, tarif..."></textarea>
+        </div>
+
+        <div class="pay">
+          <p class="order-info__title">💳 Ödeme Yöntemi</p>
+          <div class="pay__opts" id="payOpts">
+            <button type="button" class="pay__opt" data-pay="Nakit / Havale-EFT">💵 Nakit / Havale-EFT</button>
+            <button type="button" class="pay__opt" data-pay="Kredi Kartı">💳 Kredi Kartı</button>
+          </div>
+        </div>
+
+        <div class="sheet__total">
+          <span>Toplam</span>
+          <strong id="cartGrandTotal">0 TL</strong>
+        </div>
+        <a class="btn btn--wa btn--block" id="orderWaBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.9.53 3.68 1.45 5.2L2 22l5.1-1.6a9.9 9.9 0 0 0 4.94 1.3h.01c5.43 0 9.84-4.4 9.84-9.84 0-2.63-1.02-5.1-2.88-6.96A9.77 9.77 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.3-1.96 1.35-.5.05-.96.24-3.25-.68-2.77-1.1-4.5-3.94-4.64-4.13-.14-.2-1.1-1.47-1.1-2.8s.7-1.98.94-2.25c.24-.27.53-.34.7-.34l.5.01c.16 0 .38-.06.6.46.24.55.8 1.94.86 2.08.07.14.11.3.02.49-.1.2-.15.32-.29.49-.14.17-.3.38-.42.5-.14.15-.29.3-.13.6.17.28.74 1.22 1.6 1.98 1.1.98 2.02 1.28 2.3 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.28.38-.23.64-.14.27.1 1.68.79 1.97.94.28.14.47.2.54.32.07.12.07.7-.17 1.38Z"/></svg>
+          WhatsApp ile Sipariş Ver
+        </a>
+        <button class="btn btn--ghost btn--block" id="clearCartBtn" type="button">Sepeti Temizle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
