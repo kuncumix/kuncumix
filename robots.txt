@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /qr.html
+Disallow: /tools/
+
+Sitemap: https://kuncumix.github.io/kuncumix/sitemap.xml
