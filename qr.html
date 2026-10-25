@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Küncü · QR Oluşturucu (Yönetim)</title>
+  <style>
+    :root { --bg:#0f0d0c; --surface:#1c1715; --line:#342925; --text:#f6efe9; --muted:#b3a49b; --accent:#e2542a; --accent-2:#f2a33c; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif; background:var(--bg); color:var(--text); padding:20px; }
+    .wrap { max-width:900px; margin:0 auto; }
+    h1 { font-size:1.4rem; margin:0 0 4px; }
+    p.sub { color:var(--muted); margin:0 0 20px; font-size:.9rem; }
+    .panel { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px; margin-bottom:18px; }
+    label { display:block; font-size:.8rem; color:var(--muted); margin:10px 0 5px; }
+    input { width:100%; padding:11px 13px; border-radius:10px; border:1px solid var(--line); background:#120f0e; color:var(--text); font:inherit; }
+    .row { display:grid; grid-template-columns:1fr 120px; gap:12px; }
+    button { margin-top:14px; padding:12px 18px; border:0; border-radius:11px; font-weight:700; cursor:pointer;
+             background:linear-gradient(135deg,#f2a33c,#e2542a); color:#fff; }
+    button.ghost { background:transparent; border:1px solid var(--line); color:var(--muted); font-weight:600; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:16px; margin-top:8px; }
+    .qr-card { background:#fff; color:#111; border-radius:14px; padding:14px; text-align:center; break-inside:avoid; }
+    .qr-card .qr-box { display: flex; justify-content: center; }
+    .qr-card .qr-box canvas,
+    .qr-card .qr-box img { width: 100% !important; height: auto !important; }
+    .qr-card .cap { font-weight:800; margin-top:10px; font-size:1.05rem; color:#111; }
+    .qr-card .cap small { display:block; font-weight:600; color:#666; font-size:.75rem; margin-top:2px; }
+    .hint { font-size:.78rem; color:var(--muted); margin-top:10px; }
+    @media print {
+      body { background:#fff; color:#000; padding:0; }
+      .panel, h1, p.sub, .no-print { display:none !important; }
+      .qr-card { border:1px dashed #ccc; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Küncü · QR Oluşturucu</h1>
+  <p class="sub">Menü QR'ı ve Google değerlendirme QR'ı üretir. Yazdır, kullan.</p>
+
+  <div class="panel no-print">
+    <label for="baseUrl">Menü adresi (sonunda / olmadan)</label>
+    <input id="baseUrl" type="url" placeholder="https://kuncudoner.ornekdomain.com" />
+
+    <label for="reviewUrl">Google değerlendirme adresi (menüden otomatik gelir)</label>
+    <input id="reviewUrl" type="url" placeholder="https://search.google.com/local/writereview?placeid=..." />
+
+    <button id="genBtn">QR Oluştur</button>
+    <button id="printBtn" class="ghost">Yazdır</button>
+    <p class="hint">İpucu: Menü QR'ını masaya/girişe koyabilirsin. Google puanlama QR'ı ayrı kart olarak üretilir.</p>
+  </div>
+
+  <div id="output" class="grid"></div>
+</div>
+
+<!-- QR kütüphanesi (yerel — internet gerekmez) -->
+<script src="assets/qrcode.min.js"></script>
+<script>
+  const $ = (s) => document.querySelector(s);
+
+  // Menü adresini bulunduğun siteye göre ön-doldur
+  if (location.origin.startsWith('http')) $('#baseUrl').value = location.origin;
+
+  // Google puanlama linkini menu.json'dan ön-doldur
+  fetch('menu.json', { cache: 'no-cache' }).then(r => r.json()).then(m => {
+    const b = m.brand || {};
+    const rev = (b.googleReviewUrl && !b.googleReviewUrl.includes('PLACE_ID'))
+      ? b.googleReviewUrl
+      : (b.googleMapsUrl || '');
+    if (rev) $('#reviewUrl').value = rev;
+  }).catch(() => {});
+
+  function card(url, title, sub) {
+    const div = document.createElement('div');
+    div.className = 'qr-card';
+    const box = document.createElement('div');
+    box.className = 'qr-box';
+    div.appendChild(box);
+    const cap = document.createElement('div');
+    cap.className = 'cap';
+    cap.innerHTML = `${title}${sub ? `<small>${sub}</small>` : ''}`;
+    div.appendChild(cap);
+    try {
+      new QRCode(box, {
+        text: url,
+        width: 320,
+        height: 320,
+        colorDark: '#111111',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.M,
+      });
+      // qrcodejs canvas + img üretir; canvas varsa img'i gizle (çift görünmesin)
+      const cv = box.querySelector('canvas');
+      const im = box.querySelector('img');
+      if (cv && im) im.style.display = 'none';
+    } catch (e) {
+      cap.innerHTML = 'QR oluşturulamadı: ' + e.message;
+    }
+    return div;
+  }
+
+  $('#genBtn').addEventListener('click', () => {
+    const out = $('#output');
+    out.innerHTML = '';
+
+    if (typeof QRCode === 'undefined') {
+      out.innerHTML = '<p style="color:#ff9d8f">QR kütüphanesi yüklenemedi. İnternet bağlantısını kontrol et.</p>';
+      return;
+    }
+
+    const base = $('#baseUrl').value.trim().replace(/\/+$/, '');
+    const review = $('#reviewUrl').value.trim();
+
+    if (!base) { alert('Önce menü adresini gir.'); return; }
+
+    // Menü QR'ı
+    out.appendChild(card(base, 'Menü', 'Okutun & sipariş verin'));
+
+    // Google değerlendirme
+    if (review) {
+      out.prepend(card(review, 'Bizi Google\'da puanlayın', 'Yıldız verin ⭐'));
+    }
+  });
+
+  $('#printBtn').addEventListener('click', () => window.print());
+</script>
+</body>
+</html>
