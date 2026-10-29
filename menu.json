@@ -186,13 +186,6 @@
               "price": 50
             }
           ]
-        },
-        {
-          "id": "ekstra-lavas",
-          "name": "Ekstra Lavaş",
-          "desc": "1 adet ekstra lavaş",
-          "price": 20,
-          "image": "assets/products/ekstra-lavas.jpg"
         }
       ]
     },
@@ -257,13 +250,6 @@
               "price": 50
             }
           ]
-        },
-        {
-          "id": "ekstra-lavas",
-          "name": "Ekstra Lavaş",
-          "desc": "1 adet ekstra lavaş",
-          "price": 20,
-          "image": "assets/products/ekstra-lavas.jpg"
         }
       ]
     },
@@ -432,6 +418,13 @@
           "desc": "Çevre Kanunu gereği her poşet 1 TL.",
           "price": 1,
           "image": "assets/products/poset.jpg"
+        },
+        {
+          "id": "ekstra-lavas",
+          "name": "Ekstra Lavaş",
+          "desc": "1 adet ekstra lavaş",
+          "price": 20,
+          "image": "assets/products/ekstra-lavas.jpg"
         }
       ]
     }
